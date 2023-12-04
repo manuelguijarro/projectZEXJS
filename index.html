@@ -1,19 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <title>Zex: Sign in</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="style.css">
-  
 </head>
 
 <body>
   <div class="login-root">
     <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
       <div class="loginbackground box-background--white padding-top--64">
-        
       </div>
       <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
@@ -21,7 +20,6 @@
         <div class="formbg-outer">
           <div class="formbg">
             <h1 style="text-align: center; padding: 25px 25px 0 25px;"><a href="index.html" rel="dofollow">Zex</a></h1>
-
             <div class="formbg-inner padding-horizontal--48">
               <span style="text-decoration: underline;" class="padding-bottom--15">Inicia sesión a tu cuenta</span>
               <form id="stripe-login">
@@ -38,8 +36,11 @@
                   </div>
                   <input type="password" name="password">
                 </div>
+                <div id="animation-container" class="hidden">
+                  <lottie-player id="lottieAnimation" src="https://lottie.host/747851b2-4aba-4efd-8226-120d472bd93c/cegcZ0Y6IF.json" background="##ffffff" speed=".75" style="width: 100px; height: 100px; margin: 0 auto;"  autoplay direction="1" mode="normal"></lottie-player>
+                </div>
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="submit" value="Continue">
+                  <button id="submit" type="button">Continuar</button>
                 </div>
                 <div class="field">
                   <span style="text-align: center;padding-top: 10px; font-weight: bold; font-size: 15px;">¿No tienes cuenta? <a style="font-style:italic ;" href="">Regístrate</a></span>
@@ -58,6 +59,16 @@
       </div>
     </div>
   </div>
-</body>
 
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script>
+    const submitButton = document.getElementById("submit");
+    const animationContainer = document.getElementById("animation-container");
+
+    submitButton.addEventListener("click", function() {
+      animationContainer.classList.remove("hidden");
+      animationContainer.classList.add("visible");
+    });
+  </script>
+</body>
 </html>
